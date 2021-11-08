@@ -1,0 +1,18 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    justify-content: center;
+}
+
+.myBoard .square{
+    pointer-events: none;
+}
+
+.opponent .square:hover{
+    background-color: darkblue;
+}
+
+i {
+    z-index: 1;
+}

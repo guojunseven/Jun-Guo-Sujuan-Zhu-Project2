@@ -1,0 +1,22 @@
+.square {
+    width: 30px;
+    height: 30px; 
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.unselected {
+    background-color: #8ecae6;
+}
+
+.selected {
+    pointer-events: none;
+    background-color: green;
+}
+
+.hit {
+    pointer-events: none;
+    background-color: red;
+}
+
