@@ -1,10 +1,12 @@
 import { combineReducers } from "redux"
 import boardState from "./boardStateReducer"
 import opponentState from "./opponentStateReducer"
-import gameOver from "./gameOverReducer"
+import  gameState from "./gameStateReducer"
+import shipState from "./shipStateReducer"
 
 export default combineReducers({
     board : boardState,
     opponent : opponentState,
-    gameOver : gameOver
+    gameState : gameState,
+    ships : shipState
 })

@@ -1,31 +1,37 @@
 import Square from './square';
-import './css/board.css';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import gameAction from '../action/gameAction';
+import config from '../config'
+import './css/board.css';
 
 export default function Board(props) {
-    const gridState = useSelector((state) => (props.id === 'myBoard' ? state.board : state.opponent));
-    const gridComponent = [];
+    const boardState = useSelector((state) => (props.id === 'myBoard' ? state.board : state.opponent));
+    const boardComponent = [];
     
-    let gameOver = true;
-
-    for (let i = 0; i < gridState.length; i++) {
-        let row = gridState[i];
+    let hit = 0;
+    for (let i = 0; i < boardState.length; i++) {
+        let row = boardState[i];
         for (let j = 0; j < row.length; j++) {
-            if (gridState[i][j] === 1) {
-                gameOver = false;
+            if (boardState[i][j] === 3) { // count hit square
+                hit++;
             }
-            gridComponent.push(<Square symbol = {gridState[i][j]} x = {i} y = {j} type = {props.id}/>);
+            boardComponent.push(<Square gameState={props.gameState} symbol={boardState[i][j]} x={i} y={j} type={props.id}/>);
         }
     }
-    if (gameOver) {
-        if (props.id === 'myBoard') {
-            alert("AI won");
-        } else {
-            alert("You won");
-        }
+
+    const dispatch = useDispatch();
+    if (hit === config.targetHits) {
+        dispatch(gameAction(props.id === 'myBoard' ? 'AI' : 'You'));
     }
-    
-    return <div className={`${props.id} grid`}>
-        {gridComponent}
-    </div>
+
+    return (
+        <DndProvider backend = {HTML5Backend}> 
+            <div className={`${props.id} grid`}>
+                {boardComponent}
+            </div>
+        </DndProvider>
+    )
 }

@@ -1,0 +1,8 @@
+.shipPart {
+    width: 30px;
+    height: 30px; 
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #8ecae6;
+}

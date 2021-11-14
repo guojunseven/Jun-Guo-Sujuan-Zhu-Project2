@@ -1,14 +1,24 @@
-import reset from '../functions/reset';
-// import check from '../functions/check';
-// import {useDispatch} from 'react-redux';
-// import checkAction from '../action/checkAction';
-// import gameOverAction from '../action/gameOverAction';
+import random from '../functions/random';
 
-const defaultState = [...reset()];
+const defaultState = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
 export default function boardStateReducer(state = defaultState, action) {
-    if (action.type === 'reset') {
-        return [...reset()];
+    if (action.type === 'init') {
+        console.log(action.gameType);
+        if (action.gameType === 'normal') {
+            return [...random()]; // random generate my board
+        } else if (action.gameType === 'advanced') {
+            return [...defaultState];
+        }
     } else if (action.type === 'click') {
         while(true) {
             let x = Math.floor(Math.random() * 10);
@@ -21,6 +31,13 @@ export default function boardStateReducer(state = defaultState, action) {
                 state[x][y] = 3;
                 break;
             }
+        }
+        return [...state];
+    } else if (action.type === 'place') {
+        let x = action.x;
+        let y = action.y;
+        for (let i = 0; i < action.value; i++) {
+            state[x][y + i] = 1;
         }
         return [...state];
     }

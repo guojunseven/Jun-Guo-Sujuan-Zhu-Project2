@@ -2,13 +2,12 @@
 const ships = [5, 4, 3, 3, 2]
 const directions = [[0, 1], [1, 0]]; // horizontally & vertically
 
-
 //0 : not selected 
 //1 : ship not hit
 //2 : selected (not hit)
 //3 : ship hit
 
-export default function reset() {
+export default function random() {
     const state = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

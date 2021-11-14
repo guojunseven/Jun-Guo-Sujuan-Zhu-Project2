@@ -1,0 +1,7 @@
+.shipPanel {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+}

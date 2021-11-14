@@ -1,15 +1,10 @@
-// import { useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
-// import check from '../functions/check';
-import reset from '../functions/reset';
-// import checkAction from '../action/checkAction';
-// import gameOverAction from '../action/gameOverAction';
+import random from '../functions/random';
 
-const defaultState = reset();
+const defaultState = random();
 
 export default function opponentStateReducer(state = defaultState, action) {
-    if (action.type === 'reset') {
-        return [...reset()];
+    if (action.type === 'init') {
+        return [...random()];
     } else if (action.type === 'click') {
         let square = state[action.x][action.y];
         if (square === 0) {

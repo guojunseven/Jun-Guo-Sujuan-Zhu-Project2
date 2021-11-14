@@ -5,9 +5,9 @@
     justify-content: center;
 }
 
-.myBoard .square{
+/* .myBoard .square{
     pointer-events: none;
-}
+} */
 
 .opponent .square:hover{
     background-color: darkblue;

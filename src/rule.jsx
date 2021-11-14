@@ -1,4 +1,3 @@
-
 export default function rule() {
     console.log("rule");
     return(
