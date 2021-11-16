@@ -1,37 +1,35 @@
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import initAction from './action/initAction';
 import gameAction from './action/gameAction';
+import './css/index.css';
+import './css/home.css';
 
 export default function Home() {
     const dispatch = useDispatch();
     return (
-        <>
-            <h1 style={{ color: "purple", fontSize: "30px", fontWeight: 'bold', display: "flex", justifyContent: "center", paddingTop: "40px" }}>Choose Your Game</h1>
-            <Container id='home' style={{
-                flex: 1,
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-                paddingLeft: '520px',
-                paddingTop: '50px',
-
-            }} >
-
-                <Button href="/free" variant='warning' size="lg" gameType='free' style={{ marginRight: 10 }}
+        <div id='home'>
+            <div class='jumbotron'>
+                <h1>Play Battleship board game online and enjoy three interesting game mode!</h1>
+                <hr/>
+                <h1>Choose one mode and get started!</h1>
+            </div>
+            <img src='./image/battleshipIcon.jpg' />
+            <Container id='buttons'>
+                <Button href="/free" variant='warning' size="lg" gameType='free'
                     onClick={() => { dispatch(initAction('free')); dispatch(gameAction('start')) }}>
-                    Free
+                    <span class='buttontext'> Free </span>
                 </Button>
                 <Button href="/normal" variant='danger' size="lg" gameType='normal' style={{ marginLeft: 10 }}
                     onClick={() => { dispatch(initAction('normal')); dispatch(gameAction('start')) }}>
-                    Normal
+                    <span class='buttontext'> Normal </span>
                 </Button>
                 <Button href="/advanced" variant='primary' size="lg" gameType='advanced' style={{ margin: 20 }}
                     onClick={() => dispatch(initAction('advanced'))}>
-                    Advanced
+                    <span class='buttontext'> Advanced </span>
                 </Button>
             </Container>
-        </>
+        </div>
     )
 }
 ////variant='warning'

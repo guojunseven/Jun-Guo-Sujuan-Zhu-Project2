@@ -1,6 +1,27 @@
-.playGround {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+#root {
+    background-image: url("../image/battleshipBG.jpg");
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+h1 {
+    font-family: title;
+}
+
+@font-face {
+    font-family: title;
+    src: url(../fonts/Are_You_Serious/AreYouSerious-Regular.ttf)
+}
+
+@font-face {
+    font-family: button;
+    src: url(../fonts/Architects_Daughter/ArchitectsDaughter-Regular.ttf)
+}
+
+@font-face {
+    font-family: rule;
+    src: url(../fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf)
+}
+

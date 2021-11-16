@@ -1,18 +1,42 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(10, 30px);
-    grid-template-rows: repeat(10, 30px);
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
     justify-content: center;
+    align-items: center;
+    border-style: double;
+    border-width: 10px;
+    border-color: blue;
+    width: 520px;
+    margin: auto;
 }
-
-/* .myBoard .square{
-    pointer-events: none;
-} */
 
 .opponent .square:hover{
     background-color: #14f50c;
+    cursor: crosshair;
 }
 
 i {
     z-index: 1;
+    color: blue;
+    font-size: xx-large;
 }
+
+@media  screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(10, 30px);
+        grid-template-rows: repeat(10, 30px);
+        width: 320px;
+    }
+
+    i {
+        font-size: large;
+    }
+}
+
+@media  screen and (max-width: 720px) {
+    i {
+        font-size: medium;
+    }
+}
+

@@ -19,7 +19,8 @@ import './css/index.css';
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: ['board', 'opponent', 'gameState', 'ships']
+    whitelist: ['board', 'opponent', 'gameState', 'ships'],
+    blacklist: ['defaultState']
 }
 // wrap the reducer
 const pReducer = persistReducer(persistConfig, reducer);

@@ -1,7 +1,17 @@
-#shipPanel {
+.shipPanel {
     display: flex;
     flex-direction: row;
-    height: 100px;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 10px;
+}
+
+@media  screen and (max-width: 720px) {
+    .shipPanel {
+        display: flex;
+        flex-direction: column; 
+        height: 300px;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

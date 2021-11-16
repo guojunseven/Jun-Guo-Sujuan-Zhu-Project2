@@ -1,0 +1,54 @@
+#rule {
+    background-image: url("../image/Rule.jpg");
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    padding: 3%;
+    text-align: center;
+    color: red;
+}
+
+#free {
+    background-color: #ffc107;
+}
+
+#normal {
+    background-color: #dc3545;
+}
+
+#advanced {
+    background-color: #0d6efd;
+}
+
+h2 {
+    font-family: rule;
+    font-weight: bold;
+    
+    padding-left: 10%;
+}
+
+ol {
+    margin-left: 30%;
+}
+
+li {
+    font-family: rule;
+    font-weight: bold;
+    font-size: large;
+}
+
+@media  screen and (max-width: 1200px) {
+    ol {
+        margin-left: 15%;
+    }
+}
+
+@media  screen and (max-width: 750px) {
+    ol {
+        margin-left: 5%;
+    }
+}

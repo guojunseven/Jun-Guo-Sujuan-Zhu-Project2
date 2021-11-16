@@ -23,7 +23,8 @@ export default function Board(props) {
     }
 
     const dispatch = useDispatch();
-    if (hit === config.targetHits) {
+    const gameState = useSelector((state) => state.gameState);
+    if (hit === config.targetHits && gameState !== 'You') { // in case that there is a tie in the same round. The player win
         dispatch(gameAction(props.id === 'myBoard' ? 'AI' : 'You'));
     }
 

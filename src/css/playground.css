@@ -1,0 +1,47 @@
+.playGround {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 3%;
+    background-image: url("../image/battleshipBG.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 400px;
+}
+
+.gameContent {
+    width: 80%;
+    border-style: dotted;
+    border-width: 3px;
+    border-color: blue;
+    margin: auto;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    background-color: lightgray;
+}
+
+h2 {
+    padding-left: 0;
+}
+
+.buttontext {
+    font-family: button;
+}
+
+.boards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media  screen and (max-width: 720px) {
+    .gameContent {
+        width: 95%;
+    }
+
+    .boards {
+        flex-direction: column;
+    }
+}

@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import gameAction from './action/gameAction';
+import './css/playground.css';
 
 export default function Advanced() {
 
@@ -29,32 +30,21 @@ export default function Advanced() {
     }
 
     return (
-        <>
-            <div className='d-flex justify-content-center' style={{ marginTop: '50px' }}>
-                <Reset gameType='advanced' />
-            </div>
-            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
+        <div className="playGround">
+            <Reset gameType='advanced' />
+            <div class='gameContent'>
                 {panelContent}
             </div>
-            <div className="d-flex justify-content-around" style={{ marginTop: '40px' }}>
-                <div className='box' style={{ marginLeft: '100px' }}>
+            <div class='boards'>
+                <div class='boardCol'>
                     <h1> Enemy's Panel</h1>
                     <Board id='opponent' gameState={gameState} />
                 </div>
-
-                <div className='box' style={{ marginRight: '100px' }}>
+                <div class='boardCol'>
                     <h1> Your Panel</h1>
                     <Board id='myBoard' gameState={gameState} />
                 </div>
             </div>
-            {/* <div className="playGround">
-                <Reset gameType='advanced' />
-                {panelContent}
-                <h1> Enemy's Panel</h1>
-                <Board id='opponent' gameState={gameState} />
-                <h1> Your Panel</h1>
-                <Board id='myBoard' gameState={gameState} />
-            </div> */}
-        </>
+        </div>
     )
 }

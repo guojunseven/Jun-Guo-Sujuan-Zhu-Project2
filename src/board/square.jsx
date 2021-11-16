@@ -1,7 +1,6 @@
 import './css/square.css';
 import { useDispatch } from 'react-redux';
 import { useDrop } from 'react-dnd';
-import { DropTarget } from 'react-dnd';
 import { useSelector } from 'react-redux';
 import clickAction from '../action/clickAction';
 import placeAction from '../action/placeAction';

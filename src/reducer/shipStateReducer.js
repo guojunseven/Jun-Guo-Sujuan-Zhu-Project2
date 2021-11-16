@@ -12,7 +12,7 @@ export default function shipStateReducer(state = defaultState, action) {
         }
         return state;
     } else if (action.type === 'init') {
-        return defaultState; // init all ships
+        return [...defaultState]; // init all ships
     }
     return state;
 }

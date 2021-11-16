@@ -1,6 +1,7 @@
 import Reset from './board/reset';
 import Board from './board/board.jsx';
 import { useSelector } from 'react-redux';
+import './css/playground.css';
 
 export default function Normal() {
     const gameState = useSelector((state) => state.gameState);
@@ -15,24 +16,21 @@ export default function Normal() {
         panelContent = <h2>Congrats ! You won !</h2>
     }
     return (
-        <>
-            <div className='d-flex justify-content-center' style={{ marginTop: '50px' }}>
-                <Reset gameType='normal' />
-            </div>
-            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
+        <div className="playGround">
+            <Reset gameType='normal' />
+            <div class='gameContent'>
                 {panelContent}
             </div>
-            <div className="d-flex justify-content-around" style={{ marginTop: '40px' }}>
-                <div className='box' style={{ marginLeft: '100px' }}>
+            <div class='boards'>
+                <div class='boardCol'>
                     <h1> Enemy's Panel</h1>
                     <Board id='opponent' gameState={gameState} />
                 </div>
-
-                <div className='box' style={{ marginRight: '100px' }}>
+                <div class='boardCol'>
                     <h1> Your Panel</h1>
                     <Board id='myBoard' gameState={gameState} />
                 </div>
             </div>
-        </>
+        </div>
     )
 }

@@ -1,4 +1,5 @@
 import random from '../functions/random';
+import initialize from '../functions/initialize';
 
 const defaultState = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -10,14 +11,15 @@ const defaultState = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
-
+    
 export default function boardStateReducer(state = defaultState, action) {
+   
     if (action.type === 'init') {
-        console.log(action.gameType);
         if (action.gameType === 'normal') {
             return [...random()]; // random generate my board
         } else if (action.gameType === 'advanced') {
-            return [...defaultState];
+            initialize(state);
+            return [...state];
         }
     } else if (action.type === 'click') {
         while(true) {

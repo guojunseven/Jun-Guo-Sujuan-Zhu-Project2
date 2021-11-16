@@ -1,6 +1,7 @@
 import Reset from './board/reset';
 import Board from './board/board.jsx';
 import { useSelector } from 'react-redux';
+import './css/playground.css';
 
 export default function Free() {
     const gameState = useSelector((state) => state.gameState);
@@ -14,24 +15,17 @@ export default function Free() {
     }
 
     return (
-        <>
-            <div className='d-flex justify-content-center' style={{ marginTop: '50px' }}>
-                <Reset gameType='free' />
-            </div>
-            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
+        <div className="playGround">
+            <Reset gameType='free'/>
+            <div class='gameContent'>
                 {panelContent}
             </div>
-            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
-                <h1> Enemy's Panel</h1>
+            <div class='boards'>
+                <div class='boardCol'>
+                    <h1> Enemy's Panel</h1>
+                    <Board id='opponent' gameState={gameState} />
+                </div>
             </div>
-            <Board id='opponent' gameState={gameState} />
-
-        </>
-        // <div className="playGround">
-        //     <Reset />
-        //     {panelContent}
-        //     <h1> Enemy's Panel</h1>
-        //     <Board id='opponent' gameState={gameState} />
-        // </div>
+        </div>
     )
 }
