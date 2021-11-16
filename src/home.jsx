@@ -10,11 +10,10 @@ export default function Home() {
     return (
         <div id='home'>
             <div class='jumbotron'>
-                <h1>Play Battleship board game online and enjoy three interesting game mode!</h1>
+                <h1>Play Battleship board game online and enjoy three interesting game modes!</h1>
                 <hr/>
                 <h1>Choose one mode and get started!</h1>
             </div>
-            <img src='./image/battleshipIcon.jpg' />
             <Container id='buttons'>
                 <Button href="/free" variant='warning' size="lg" gameType='free'
                     onClick={() => { dispatch(initAction('free')); dispatch(gameAction('start')) }}>
@@ -32,6 +31,3 @@ export default function Home() {
         </div>
     )
 }
-////variant='warning'
-//variant='danger'
-//variant='primary'

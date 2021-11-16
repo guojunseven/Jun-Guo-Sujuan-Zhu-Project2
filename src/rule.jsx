@@ -17,20 +17,20 @@ export default function rule() {
     
             <h2 id='normal'>Normal Game</h2>
             <ol>
-            <li>Ships are generated randomly on your board</li>
-            <li>Five ships are randomly placed on the board but they are hidden</li>
-            <li>Select a square on the opponent board</li>
-            <li>You and AI take turns to hit the board</li>
-            <li>Try to destroy all of your opponent’s ships before they get yours</li>
+                <li>Ships are generated randomly on your board</li>
+                <li>Five ships are randomly placed on the board but they are hidden</li>
+                <li>Select a square on the opponent board</li>
+                <li>You and AI take turns to hit the board</li>
+                <li>Try to destroy all of your opponent’s ships before they get yours</li>
             </ol>
             
             <h2 id='advanced'>Advanced Game</h2>
             <ol>
-            <li>Ships are generated randomly on your enemy's board</li>
-            <li>Select your ship manually to place it on your board as you wish</li>
-            <li>Click Start when all five battleships are on their positions</li>
-            <li>You and AI take turns to hit the board</li>
-            <li>Try to destroy all of your opponent’s ships before they get yours</li>
+                <li>Ships are generated randomly on your enemy's board</li>
+                <li>Select your ship manually to place it on your board as you wish</li>
+                <li>Click Start when all five battleships are on their positions</li>
+                <li>You and AI take turns to hit the board</li>
+                <li>Try to destroy all of your opponent’s ships before they get yours</li>
             </ol>   
         </div>
     )
