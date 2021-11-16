@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import gameAction from './action/gameAction';
 
 export default function Advanced() {
-    
+
     const gameState = useSelector((state) => state.gameState);
     const shipState = useSelector((state) => state.ships);
     const dispatch = useDispatch();
@@ -27,15 +27,34 @@ export default function Advanced() {
     } else if (gameState === 'You') {
         panelContent = <h2>Congrats ! You won !</h2>
     }
-    
+
     return (
-        <div className="playGround">
-            <Reset gameType='advanced'/>
-            {panelContent}
-            <h1> Enemy's Panel</h1>
-            <Board id='opponent' gameState={gameState}/>
-            <h1> Your Panel</h1>
-            <Board id='myBoard' gameState={gameState}/>
-        </div>
+        <>
+            <div className='d-flex justify-content-center' style={{ marginTop: '50px' }}>
+                <Reset gameType='advanced' />
+            </div>
+            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
+                {panelContent}
+            </div>
+            <div className="d-flex justify-content-around" style={{ marginTop: '40px' }}>
+                <div className='box' style={{ marginLeft: '100px' }}>
+                    <h1> Enemy's Panel</h1>
+                    <Board id='opponent' gameState={gameState} />
+                </div>
+
+                <div className='box' style={{ marginRight: '100px' }}>
+                    <h1> Your Panel</h1>
+                    <Board id='myBoard' gameState={gameState} />
+                </div>
+            </div>
+            {/* <div className="playGround">
+                <Reset gameType='advanced' />
+                {panelContent}
+                <h1> Enemy's Panel</h1>
+                <Board id='opponent' gameState={gameState} />
+                <h1> Your Panel</h1>
+                <Board id='myBoard' gameState={gameState} />
+            </div> */}
+        </>
     )
 }

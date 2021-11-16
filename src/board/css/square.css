@@ -1,18 +1,18 @@
 .square {
     width: 30px;
     height: 30px; 
-    border-color: grey;
+    border-color: rgb(14, 238, 14);
     border-width: 1px;
     border-style: solid;
 }
 
 .unselected {
-    background-color: #8ecae6;
+    background-color: #020f03;
 }
 
 .selected {
     pointer-events: none;
-    background-color: green;
+    background-color: rgb(48, 248, 48);
 }
 
 .hit {

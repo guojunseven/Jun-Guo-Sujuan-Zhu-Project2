@@ -14,11 +14,24 @@ export default function Free() {
     }
 
     return (
-        <div className="playGround">
-            <Reset />
-            {panelContent}
-            <h1> Enemy's Panel</h1>
+        <>
+            <div className='d-flex justify-content-center' style={{ marginTop: '50px' }}>
+                <Reset gameType='free' />
+            </div>
+            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
+                {panelContent}
+            </div>
+            <div className='d-flex justify-content-center' style={{ marginTop: '30px' }}>
+                <h1> Enemy's Panel</h1>
+            </div>
             <Board id='opponent' gameState={gameState} />
-        </div>
+
+        </>
+        // <div className="playGround">
+        //     <Reset />
+        //     {panelContent}
+        //     <h1> Enemy's Panel</h1>
+        //     <Board id='opponent' gameState={gameState} />
+        // </div>
     )
 }

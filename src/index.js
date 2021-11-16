@@ -1,9 +1,9 @@
 import React from 'react'
-import {render} from 'react-dom'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
-import {persistStore, persistReducer} from 'redux-persist'
-import {PersistGate} from 'redux-persist/integration/react'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage'
 import reducer from './reducer/reducers.js'
 import NavBar from './navbar'
@@ -29,18 +29,18 @@ const store = createStore(pReducer)
 const persistor = persistStore(store)
 
 render(
-    <Provider store = {store}>
-        <PersistGate loading={null} persistor = {persistor}>
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
             <NavBar />
             <Router>
                 <Routes>
                     <Route>
-                        <Route exact path={"/"} element={<Home />}/>
-                        <Route exact path={"/home"} element={<Home />}/>
-                        <Route exact path={"/rule"} element={<Rule />}/>
-                        <Route exact path={"/free"} element={<Free />}/>
-                        <Route exact path={"/normal"} element={<Normal />}/>
-                        <Route exact path={"/advanced"} element={<Advanced />}/>
+                        <Route exact path={"/"} element={<Home />} />
+                        <Route exact path={"/home"} element={<Home />} />
+                        <Route exact path={"/rule"} element={<Rule />} />
+                        <Route exact path={"/free"} element={<Free />} />
+                        <Route exact path={"/normal"} element={<Normal />} />
+                        <Route exact path={"/advanced"} element={<Advanced />} />
                         <Route render={() => <h1>Not found!</h1>} />
                     </Route>
                 </Routes>
