@@ -1,7 +1,12 @@
-.home {
-   display: flex;
-   flex-direction: column; 
-   align-items: center;
+#home {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-image: url("../image/battleshipBG.jpg");
+    padding-bottom: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .jumbotron {
